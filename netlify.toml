@@ -1,0 +1,13 @@
+[build]
+command = "pip install -r requirements.txt && python index.py"
+publish = "static"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "/api/*"
+to = "/.netlify/functions/app/:splat"
+status = 200
